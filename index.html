@@ -1,1 +1,899 @@
-sddd
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Hairpins Hair Clips - Neylna Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-bg {
+            background-image: url('https://cdn.hotishop.com/image/1e7cad46d48d3c7023b610072316048216769d37.gif');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        
+        .modal.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+        
+        .order-notification {
+            animation: slideIn 0.5s forwards, slideOut 0.5s forwards 2.5s;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(100%);
+            }
+        }
+        
+        .badge {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://cdn.orderonline.id/uploads/images_8057731750768190275.png" alt="Neylna Store" class="h-10 mr-2">
+                <span class="text-xl font-bold text-pink-600">Neylna Store</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#produk" class="text-gray-700 hover:text-pink-600 transition">Produk</a>
+                <a href="#fitur" class="text-gray-700 hover:text-pink-600 transition">Fitur</a>
+                <a href="#testimoni" class="text-gray-700 hover:text-pink-600 transition">Testimoni</a>
+                <a href="#beli" class="text-gray-700 hover:text-pink-600 transition">Beli Sekarang</a>
+            </div>
+            <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#produk" class="text-gray-700 hover:text-pink-600 transition py-2 border-b">Produk</a>
+                <a href="#fitur" class="text-gray-700 hover:text-pink-600 transition py-2 border-b">Fitur</a>
+                <a href="#testimoni" class="text-gray-700 hover:text-pink-600 transition py-2 border-b">Testimoni</a>
+                <a href="#beli" class="text-gray-700 hover:text-pink-600 transition py-2">Beli Sekarang</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-16 md:py-24 text-white relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">Women Hairpins Hair Clips</h1>
+                <p class="text-lg md:text-xl mb-6">Aksesori rambut elegan yang membuat penampilanmu semakin memukau!</p>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-3 text-center">
+                        <div class="text-2xl font-bold" id="viewers">1254</div>
+                        <div class="text-sm">Sedang Melihat</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-3 text-center">
+                        <div class="text-2xl font-bold" id="sold">1982</div>
+                        <div class="text-sm">Terjual</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-3 text-center">
+                        <div class="text-2xl font-bold" id="stock">94</div>
+                        <div class="text-sm">Stok Tersisa</div>
+                    </div>
+                </div>
+                <a href="#beli" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition transform hover:scale-105">
+                    BELI SEKARANG <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section id="produk" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Galeri Produk</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="product-card transition duration-300 cursor-pointer" onclick="openModal('https://cdn.hotishop.com/image/64a7dafc9cc0eaff68f355fe6611701117340e6d-600.jpeg')">
+                    <img src="https://cdn.hotishop.com/image/64a7dafc9cc0eaff68f355fe6611701117340e6d-600.jpeg" alt="Hairpin 1" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="product-card transition duration-300 cursor-pointer" onclick="openModal('https://cdn.hotishop.com/image/52c20913e6316d06dff584e5574a9f509422c80f-600.jpeg')">
+                    <img src="https://cdn.hotishop.com/image/52c20913e6316d06dff584e5574a9f509422c80f-600.jpeg" alt="Hairpin 2" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="product-card transition duration-300 cursor-pointer" onclick="openModal('https://cdn.hotishop.com/image/f8ae0e24718792244561bde425794e2c588717e6-500.jpeg')">
+                    <img src="https://cdn.hotishop.com/image/f8ae0e24718792244561bde425794e2c588717e6-500.jpeg" alt="Hairpin 4" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="product-card transition duration-300 cursor-pointer" onclick="openModal('https://cdn.hotishop.com/image/b38f0eae0d44ab7783a412244f07348f9a451dec-500.jpeg')">
+                    <img src="https://cdn.hotishop.com/image/b38f0eae0d44ab7783a412244f07348f9a451dec-500.jpeg" alt="Hairpin 5" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="product-card transition duration-300 cursor-pointer" onclick="openModal('https://cdn.hotishop.com/image/747894f1084db5eca1f3ed6dd81c860717137bce-500.jpeg')">
+                    <img src="https://cdn.hotishop.com/image/747894f1084db5eca1f3ed6dd81c860717137bce-500.jpeg" alt="Hairpin 6" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="product-card transition duration-300 cursor-pointer" onclick="openModal('https://cdn.hotishop.com/image/f7afa63dffd2c96fde4c032d327bb1f533f1eaae-500.jpeg')">
+                    <img src="https://cdn.hotishop.com/image/f7afa63dffd2c96fde4c032d327bb1f533f1eaae-500.jpeg" alt="Hairpin 7" class="w-full h-48 object-cover rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Solution Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Permasalahan Rambut Wanita</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 text-pink-600 rounded-full p-2 mr-4">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Rambut Mudah Berantakan</h3>
+                                <p class="text-gray-600">Setelah beraktivitas seharian, rambut sering terlihat tidak rapi dan sulit diatur.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 text-pink-600 rounded-full p-2 mr-4">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Aksesori Tidak Nyaman</h3>
+                                <p class="text-gray-600">Banyak hair clip yang terasa sakit di kepala setelah dipakai beberapa jam.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 text-pink-600 rounded-full p-2 mr-4">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Tampilan Biasa Saja</h3>
+                                <p class="text-gray-600">Kesulitan menemukan aksesori rambut yang stylish namun tetap elegan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Solusi dari Women Hairpins Hair Clips</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-600 rounded-full p-2 mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Rapi Sepanjang Hari</h3>
+                                <p class="text-gray-600">Dengan desain khusus, rambut tetap rapi meski beraktivitas seharian.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-600 rounded-full p-2 mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Nyaman Dipakai</h3>
+                                <p class="text-gray-600">Material premium yang ringan dan tidak membuat sakit kepala.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-600 rounded-full p-2 mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Tampilan Elegan</h3>
+                                <p class="text-gray-600">Desain stylish yang cocok untuk berbagai kesempatan, dari casual hingga formal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="fitur" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Fitur Utama Produk</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
+                    <div class="bg-pink-100 text-pink-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-gem text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Material Premium</h3>
+                    <p class="text-gray-600">Terbuat dari bahan berkualitas tinggi yang tahan lama dan tidak mudah rusak.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
+                    <div class="bg-pink-100 text-pink-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Beragam Warna</h3>
+                    <p class="text-gray-600">Tersedia dalam berbagai pilihan warna yang cocok untuk semua outfit.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
+                    <div class="bg-pink-100 text-pink-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Ramah Kulit</h3>
+                    <p class="text-gray-600">Tidak menyebabkan iritasi atau alergi, aman untuk semua jenis kulit.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
+                    <div class="bg-pink-100 text-pink-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-weight text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Ringan</h3>
+                    <p class="text-gray-600">Sangat ringan sehingga tidak terasa saat dipakai seharian.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
+                    <div class="bg-pink-100 text-pink-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Cengkraman Kuat</h3>
+                    <p class="text-gray-600">Tetap pada tempatnya tanpa melukai rambut atau membuat sakit kepala.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition">
+                    <div class="bg-pink-100 text-pink-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-gift text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Paket Hemat</h3>
+                    <p class="text-gray-600">Dapatkan harga spesial dengan pembelian paket isi 10 pcs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Testimoni Pelanggan</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">A</div>
+                        <div>
+                            <h4 class="font-semibold">Anita S.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Saya sudah mencoba banyak hair clip, tapi ini yang paling nyaman! Tidak sakit kepala meski dipakai seharian. Desainnya juga sangat cantik."</p>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">D</div>
+                        <div>
+                            <h4 class="font-semibold">Dewi K.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Warnanya persis seperti di foto, kualitasnya premium banget. Sudah beli 2 paket karena anak-anak juga suka pakai."</p>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">R</div>
+                        <div>
+                            <h4 class="font-semibold">Rina M.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Pengiriman cepat, packing rapi. Hairclipnya kuat mencengkeram rambut saya yang tebal tanpa melukai. Sangat recommended!"</p>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">S</div>
+                        <div>
+                            <h4 class="font-semibold">Sinta W.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Saya pakai untuk acara pernikahan teman, banyak yang tanya beli dimana. Sekarang selalu sedia di tas untuk gaya sehari-hari."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section class="py-12 bg-pink-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6">PROMO TERBATAS!</h2>
+                <div class="text-xl mb-6">KHUSUS PEMBAYARAN TRANSFER HARI INI DAPATKAN GRATIS ONGKIR</div>
+                
+                <div class="flex justify-center mb-8">
+                    <div class="bg-white text-pink-600 rounded-lg p-4 mx-2 text-center">
+                        <div class="text-3xl font-bold" id="countdown-hours">12</div>
+                        <div class="text-sm">Jam</div>
+                    </div>
+                    <div class="bg-white text-pink-600 rounded-lg p-4 mx-2 text-center">
+                        <div class="text-3xl font-bold" id="countdown-minutes">45</div>
+                        <div class="text-sm">Menit</div>
+                    </div>
+                    <div class="bg-white text-pink-600 rounded-lg p-4 mx-2 text-center">
+                        <div class="text-3xl font-bold" id="countdown-seconds">30</div>
+                        <div class="text-sm">Detik</div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="inline-block bg-yellow-400 text-pink-800 font-bold px-4 py-2 rounded-full mb-4">
+                        STOK TERBATAS! HANYA <span id="remaining-stock">94</span> LAGI!
+                    </div>
+                    <p class="mb-4">Jangan sampai kehabisan, produk ini terjual 300-550 Pcs per jam!</p>
+                </div>
+                
+                <a href="#beli" class="bg-white hover:bg-gray-100 text-pink-600 font-bold py-4 px-12 rounded-full inline-flex items-center transition transform hover:scale-105">
+                    BELI SEKARANG <i class="fas fa-shopping-cart ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="beli" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Pilihan Paket</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="border-2 border-pink-200 rounded-lg p-6 relative overflow-hidden">
+                        <div class="absolute top-5 right-3 bg-pink-600 text-white px-4 py-1 text-sm font-bold transform rotate-0 translate-x-4 -translate-y-2">
+                            NORMAL
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Paket Reguler</h3>
+                        <div class="flex items-baseline mb-4">
+                            <span class="text-4xl font-bold text-pink-600">Rp 140.000</span>
+                            <span class="ml-2 text-gray-500 line-through">Rp 210.000</span>
+                        </div>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Isi 5 pcs hair clips</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>5 warna berbeda</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Garansi 1 bulan</span>
+                            </li>
+                        </ul>
+                        <button onclick="scrollToForm()" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-4 rounded-full transition transform hover:scale-105">
+                            Pilih Paket Ini
+                        </button>
+                    </div>
+                    <div class="border-2 border-purple-200 rounded-lg p-6 relative overflow-hidden">
+                        <div class="absolute top-5 right-3 bg-purple-600 text-white px-4 py-1 text-sm font-bold transform rotate-0 translate-x-4 -translate-y-2">
+                            BEST SELLER
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Paket Super Hemat</h3>
+                        <div class="flex items-baseline mb-4">
+                            <span class="text-4xl font-bold text-purple-600">Rp 190.000</span>
+                            <span class="ml-2 text-gray-500 line-through">Rp 285.000</span>
+                        </div>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Isi 10 pcs hair clips</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>10 warna berbeda</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Garansi 3 bulan</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Gratis pouch eksklusif</span>
+                            </li>
+                        </ul>
+                        <button onclick="scrollToForm()" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-full transition transform hover:scale-105">
+                            Pilih Paket Ini
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-circle text-yellow-500 text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-bold">PERHATIAN:</span> Harga promo hanya berlaku hari ini. Stok sangat terbatas!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- FAQ Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Pertanyaan yang Sering Diajukan</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-semibold text-left">Apa bahan dari hair clips ini?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p>Hair clips kami terbuat dari material plastik ABS berkualitas tinggi yang ringan namun kuat, dengan lapisan cat yang tidak mudah mengelupas dan aman untuk kulit.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-semibold text-left">Berapa lama pengiriman biasanya?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p>Pengiriman biasanya memakan waktu 2-5 hari kerja tergantung lokasi pengiriman. Untuk wilayah Jabodetabek biasanya lebih cepat, sekitar 1-2 hari kerja.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-semibold text-left">Apakah ada garansi untuk produk ini?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p>Ya, kami memberikan garansi 1 bulan untuk paket reguler dan 3 bulan untuk paket super hemat. Jika ada kerusakan atau cacat produksi, kami akan mengganti produk baru.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-semibold text-left">Bagaimana cara perawatan hair clips ini?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p>Untuk perawatan, cukup bersihkan dengan lap lembut jika kotor. Hindari terkena air dalam waktu lama atau bahan kimia keras. Simpan di tempat kering dan tidak lembab.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-semibold text-left">Apakah bisa memilih warna?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p>Kami akan mengirimkan variasi warna terbaik sesuai stok yang ada. Jika Anda ingin warna tertentu, bisa dicantumkan di catatan pemesanan dan kami akan berusaha memenuhinya jika stok tersedia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-pink-600 text-white p-8 flex flex-col justify-center">
+                        <h2 class="text-2xl font-bold mb-4">Women Hairpins Hair Clips</h2>
+                        <div class="mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-bold">Rp 140.000</span>
+                                <span class="ml-2 text-pink-200 line-through">Rp 210.000</span>
+                            </div>
+                            <div class="text-sm mt-1">Hemat Rp 70.000 (33%)</div>
+                        </div>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2"></i>
+                                <span>Material premium berkualitas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2"></i>
+                                <span>Nyaman dipakai seharian</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2"></i>
+                                <span>Desain elegan dan stylish</span>
+                            </li>
+                        </ul>
+                        <div class="flex items-center mt-auto">
+                            <i class="fas fa-shield-alt text-xl mr-3"></i>
+                            <div>
+                                <div class="font-bold">Garansi 100%</div>
+                                <div class="text-sm text-pink-200">Uang kembali jika tidak sesuai</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8" id="order-form">
+                        <h3 class="text-xl font-bold mb-6 text-gray-800">Form Pemesanan</h3>
+                        <!-- OrderOnline Embed Code - v8.0.4 -->
+                        <div class="ooef">
+                            <form class="orderonline-embed-form" data-username="vera" data-product-slug="women-hairpins-hair-clips" data-product-id="686169b72722f0dc6609d759" id="oo-embed-form-women-hairpins-hair-clips-2975" data-origin="orderonline">
+                            <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
+                            </form>
+                        </div>
+                        <script>
+                            if (typeof xLogError != 'function') {
+                                var xLogError = function (error) {
+                                    var req = new XMLHttpRequest();
+                                    var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                                    var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                                    req.open('POST', 'https://api.orderonline.id/log', true);
+                                    req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                                    req.send(params);
+                                };
+                            }
+                            try {
+                                if (typeof xEmbedScript != 'function') {
+                                    var xEmbedScript = function () {
+                                        !function(w, d, e, v, id, t, s) {
+                                            if (d.getElementById(id)) return;
+                                            t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                            s = d.getElementsByTagName(e)[0];
+                                            s.parentNode.insertBefore(t, s);
+                                        }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                                    };
+                                }
+                                if (typeof xEmbedInit != 'function') {
+                                    var xEmbedInit = function (w, n) {
+                                        if (w.ooe) return;
+                                        n = w.ooe = function() {
+                                            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                                        };
+                                        if (!w._ooe) w._ooe = n;
+                                        n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                                    };
+                                }
+                                xEmbedInit(window);
+                                ooe('setup', 'redirect', 'https://vera.orderonline.id');
+                                ooe('init', '5f1a7807a9bf807d6c63d963', '686169b72722f0dc6609d759', '686169b72722f0dc6609d75a', 'oo-embed-form-women-hairpins-hair-clips-2975', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":false});
+                                if (!window.jQuery) {
+                                    !function(w, d, e, v, id, t, s) {
+                                        if (d.getElementById(id)) return;
+                                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                        t.addEventListener('load', xEmbedScript);
+                                        s = d.getElementsByTagName(e)[0];
+                                        s.parentNode.insertBefore(t, s);
+                                    }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                                } else {
+                                    xEmbedScript();
+                                }
+                            } catch (e) {
+                                xLogError(e);
+                                throw e;
+                            }
+                        </script>
+                        <!-- End OrderOnline Embed Code -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="https://cdn.orderonline.id/uploads/images_8057731750768190275.png" alt="Neylna Store" class="h-8 mr-2">
+                        <span class="text-xl font-bold">Neylna Store</span>
+                    </div>
+                    <p class="mt-2 text-gray-400">Toko aksesori rambut berkualitas untuk penampilan lebih elegan.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 Neylna Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 opacity-0 pointer-events-none" id="imageModal">
+        <div class="modal-content bg-white rounded-lg max-w-4xl w-full mx-4 transform translate-y-10">
+            <div class="flex justify-between items-center border-b p-4">
+                <h3 class="text-lg font-semibold">Pratinjau Produk</h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-4">
+                <img src="" alt="Product Image" class="w-full h-auto max-h-[70vh] object-contain" id="modalImage">
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Notification -->
+    <div class="order-notification fixed bottom-0 left-0 right-0 bg-white shadow-lg rounded-t-lg p-4 z-50 hidden" id="orderNotification">
+        <div class="flex justify-between items-center mb-2">
+            <div class="flex items-center">
+                <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3" id="customerInitial">A</div>
+                <div>
+                    <div class="font-semibold" id="customerName">Anita</div>
+                    <div class="text-xs text-gray-500" id="customerLocation">Jakarta</div>
+                </div>
+            </div>
+            <div class="text-sm font-bold text-pink-600">Baru saja membeli</div>
+        </div>
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://cdn.hotishop.com/image/64a7dafc9cc0eaff68f355fe6611701117340e6d-600.jpeg" alt="Product" class="w-12 h-12 object-cover rounded mr-3">
+                <div>
+                    <div class="font-medium">Women Hairpins Hair Clips</div>
+                    <div class="text-sm text-gray-500">Paket Super Hemat</div>
+                </div>
+            </div>
+            <button onclick="closeNotification()" class="text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Image Modal
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modalImage.src = imageSrc;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Dynamic Counters
+        function animateCounter(elementId, target, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const start = parseInt(element.textContent);
+            const increment = target - start;
+            const startTime = performance.now();
+            
+            function updateCounter(currentTime) {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                const value = start + (increment * progress);
+                element.textContent = Math.floor(value);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+            
+            requestAnimationFrame(updateCounter);
+        }
+
+        // Initialize counters with random values
+        setTimeout(() => {
+            animateCounter('viewers', Math.floor(Math.random() * 500) + 1500);
+            animateCounter('sold', Math.floor(Math.random() * 300) + 1000);
+        }, 1000);
+
+        // Stock counter
+        let stock = 94;
+        let sold = 1982;
+        const stockElement = document.getElementById('stock');
+        const remainingStockElement = document.getElementById('remaining-stock');
+        const soldElement = document.getElementById('sold');
+        
+        function decreaseStock() {
+            if (stock > 0) {
+                stock--;
+                sold++;
+                stockElement.textContent = stock;
+                remainingStockElement.textContent = stock;
+                soldElement.textContent = sold;
+                
+                // Random time between 5-15 seconds for next decrease
+                const nextDecrease = Math.random() * 10000 + 5000;
+                setTimeout(decreaseStock, nextDecrease);
+            }
+        }
+        
+        // Start decreasing stock after initial delay
+        setTimeout(decreaseStock, 5000);
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            
+            const diff = midnight - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Fake Order Notifications
+        const names = ['Anita', 'Budi', 'Citra', 'Dewi', 'Eka', 'Fani', 'Gita', 'Hani', 'Indah', 'Jihan'];
+        const locations = ['Jakarta', 'Bandung', 'Surabaya', 'Medan', 'Makassar', 'Yogyakarta', 'Semarang', 'Denpasar', 'Palembang', 'Balikpapan'];
+        
+        function showRandomOrder() {
+            const notification = document.getElementById('orderNotification');
+            const initial = document.getElementById('customerInitial');
+            const name = document.getElementById('customerName');
+            const location = document.getElementById('customerLocation');
+            
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomLocation = locations[Math.floor(Math.random() * locations.length)];
+            
+            initial.textContent = randomName.charAt(0);
+            name.textContent = randomName;
+            location.textContent = randomLocation;
+            
+            notification.classList.remove('hidden');
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 5000);
+            
+            // Schedule next notification
+            const nextNotification = Math.random() * 15000 + 10000; // 10-25 seconds
+            setTimeout(showRandomOrder, nextNotification);
+        }
+        
+        // Start showing notifications after initial delay
+        setTimeout(showRandomOrder, 8000);
+
+        function closeNotification() {
+            document.getElementById('orderNotification').classList.add('hidden');
+        }
+
+        // Scroll to form
+        function scrollToForm() {
+            document.getElementById('order-form').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Initialize animations when elements come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.product-card, .testimonial-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
